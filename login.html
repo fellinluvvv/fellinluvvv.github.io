@@ -48,7 +48,7 @@
                 <ul class="u-align-center u-nav u-popupmenu-items u-spacing-0 u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="store.html">Store</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="contacts.html">Contacts</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="privacy.html">Privacy</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="home.html">Login</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.html">Login</a>
 </li></ul>
                 <div class="custom-expanded u-black u-container-style u-group u-shape-rectangle u-group-1">
                   <div class="u-container-layout u-valign-bottom u-container-layout-1">
@@ -69,31 +69,48 @@
           </a>
         </p>
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-53e9">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+  <section class="u-clearfix u-section-1" id="sec-53e9">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-form u-login-control u-form-1">
-          <form action="#" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;" method="post">
-            <div class="u-form-group u-form-name">
-              <label for="username-aedf" class="u-label">Username *</label>
-              <input type="text" placeholder="Enter your Username" id="username-aedf" name="username" class="u-input u-input-rectangle" required="">
-            </div>
-            <div class="u-form-group u-form-password">
-              <label for="password-aedf" class="u-label">Password *</label>
-              <input type="text" placeholder="Enter your Password" id="password-aedf" name="password" class="u-input u-input-rectangle" required="">
-            </div>
-            <div class="u-form-checkbox u-form-group">
-              <input type="checkbox" id="checkbox-aedf" name="remember" value="On" class="u-field-input">
-              <label for="checkbox-aedf" class="u-field-label" style="">Remember me</label>
-            </div>
-            <div class="u-align-center u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Login</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
-            </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-          </form>
+            <form action="#" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;" method="post" onsubmit="return validateForm()">
+                <div class="u-form-group u-form-name">
+                    <label for="username-aedf" class="u-label">Username *</label>
+                    <input type="text" placeholder="Enter your Username" id="username-aedf" name="username" class="u-input u-input-rectangle" required="">
+                </div>
+                <div class="u-form-group u-form-password">
+                    <label for="password-aedf" class="u-label">Password *</label>
+                    <input type="password" placeholder="Enter your Password" id="password-aedf" name="password" class="u-input u-input-rectangle" required="">
+                </div>
+                <div class="u-form-checkbox u-form-group">
+                    <input type="checkbox" id="checkbox-aedf" name="remember" value="On" class="u-field-input">
+                    <label for="checkbox-aedf" class="u-field-label" style="">Remember me</label>
+                </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                    <input type="submit" value="Login" class="u-btn u-btn-submit u-button-style u-btn-1">
+                    <input type="hidden" value="" name="recaptchaResponse">
+                </div>
+            </form>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username-aedf").value;
+        var password = document.getElementById("password-aedf").value;
+
+        // Check if username and password match the expected values
+        if (username === "fellin" && password === "luvv") {
+            // Redirect to the desired page
+            window.location.href = "home.html";
+            return false; // Prevent the form from submitting
+        } else {
+            // Display an error message or take other actions as needed
+            alert("Invalid username or password");
+            return false; // Prevent the form from submitting
+        }
+    }
+</script>
     
     
     
